@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <p id="output"></p>
+
+    <script>
+        const students = ["John", "Jane"];
+        const mathGrades = [70, 85];
+
+        let studentName = prompt("Enter student's name:");
+        let index = students.indexOf(studentName);
+        
+        if (index !== -1) {
+            let grade = mathGrades[index];
+            let color = "";
+            if (grade < 60) color = "red";
+            else if (grade < 70) color = "yellow";
+            else if (grade < 100) color = "green";
+            else color = "blue";
+
+            document.getElementById('output').innerHTML = `<span style="color:${color};">${studentName} has reached ${grade} points in Math this season.</span>`;
+        } else {
+            alert("Student not found.");
+        }
+    </script>
+</body>
+</html>
